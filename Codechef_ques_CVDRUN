@@ -1,0 +1,29 @@
+try:
+    t=int(input())
+    a=[]
+    for i in range (0,t):
+        n,k,x,y=map(int, input().split())
+        l=[]
+        for i in range(0,n):
+            l.append(0)
+            
+        flag=0
+        x-=1
+        y-=1
+        while True:
+            if x==y:
+                flag=1
+                break
+            elif l[x]==1:
+                break
+            else:
+                l[x]=1
+                x=(x+k)%n
+        if(flag):
+            a.append("YES")
+        else:
+            a.append("NO")
+    for i in range(0,len(a)):
+        print(a[i])
+except:
+    pass
