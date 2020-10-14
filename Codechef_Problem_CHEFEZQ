@@ -1,0 +1,21 @@
+try:
+    T=int(input())
+    l=[]
+    for i in range(0,T):
+        n,k=map(int,input().split())   
+        a = list(map(int,input().split()))   
+        left=0
+        resolved=0
+        for i in range(0,n):
+            q=(a[i]+left)-k
+            if q<0:
+                resolved=i+1
+                break
+            left+=a[i]-k
+        if resolved==0:
+            resolved=n+(left//k)+1
+        l.append(resolved)
+    for i in range(0,len(l)):
+        print(l[i])
+except:
+    pass
